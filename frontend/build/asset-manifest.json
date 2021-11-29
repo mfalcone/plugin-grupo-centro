@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/grupocentro/wp-content/plugins/profesionales/frontend/build/static/css/main.css",
+    "main.js": "/grupocentro/wp-content/plugins/profesionales/frontend/build/static/js/main.js",
+    "main.js.map": "/grupocentro/wp-content/plugins/profesionales/frontend/build/static/js/main.js.map",
+    "index.html": "/grupocentro/wp-content/plugins/profesionales/frontend/build/index.html",
+    "static/css/main.css.map": "/grupocentro/wp-content/plugins/profesionales/frontend/build/static/css/main.css.map",
+    "static/js/main.js.LICENSE.txt": "/grupocentro/wp-content/plugins/profesionales/frontend/build/static/js/main.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/css/main.css",
+    "static/js/main.js"
+  ]
+}
