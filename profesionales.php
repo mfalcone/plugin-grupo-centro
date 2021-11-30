@@ -41,7 +41,7 @@ function create_posttype() {
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'profesionales'),
+            'rewrite' => array('slug' => 'profesionales-lista'),
             'supports' => array('title','thumbnail','page-attributes','excerpt'),
             'show_in_rest'=> true,
             'rest_base' => 'profesionales',
@@ -62,7 +62,7 @@ function profesionales_metabox_agregar()
     foreach ($lospost as $elpost) {
 
         add_meta_box(
-            'wporg_box_id_4',        
+            'wporg_box_id_5',        
             'Título',  
             'genero_metabox',  
             'profesionales',
@@ -259,7 +259,7 @@ function profesionales_init() {
     if(getenv('WP_ENV')!=="development") {
         $path = "/frontend/build/static";
     }
-    wp_register_script("my_react_app_js", plugins_url($path."/js/main.js", __FILE__), array(), "1.0", false);
+    wp_register_script("my_react_app_js", plugins_url($path."/js/main.js?234", __FILE__), array(), "1.0", false);
     wp_register_style("my_react_app_css", plugins_url($path."/css/main.css", __FILE__), array(), "1.0", "all");
 }
 
