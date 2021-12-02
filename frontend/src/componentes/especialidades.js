@@ -53,9 +53,9 @@ export const Especialidades = ({ especialidades }) => {
                     {especialidadesAMostrar.map((especialidad, index) => {
                         return (<Accordion.Item eventKey={index} key={especialidad.id}><div className="row">
                             <Accordion.Header onClick={() => {abrirCerrar(index)}}>
-                            <h4 class="panel-title toggle">
+                            <h4 className="panel-title toggle">
                            {(activo === index)?(<Dash />):(<Plus />)} 
-                            <span class="fusion-toggle-heading">{especialidad.titulo}</span>
+                            <span className="fusion-toggle-heading">{especialidad.titulo}</span>
                             </h4>
                             </Accordion.Header>
                             <Accordion.Body>

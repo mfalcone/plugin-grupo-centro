@@ -1,2 +1,2 @@
-const url = process.env.NODE_ENV === 'development' ?  'http://localhost/grupocentro' : 'https://www.grupocentro.ar' ;
+const url = process.env.NODE_ENV === 'development' ?  'https://www.grupocentro.ar' : 'https://www.grupocentro.ar' ;
 export const BASEURL = url;

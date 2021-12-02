@@ -156,7 +156,7 @@ function apellido_metabox($post){
 
  function matricula_metabox($post){
     $matricula = get_post_meta($post->ID, '_matricula_meta_key', true);?>
-     <input tipe="text" name="matricula_field" id="matricula_field" class="my-postbox" placeholder="Matricula" value="<?php echo $matricula; ?>">
+     <input type="text" name="matricula_field" id="matricula_field" class="my-postbox" placeholder="Matricula" value="<?php echo $matricula; ?>">
         <?php
     }
 
@@ -171,9 +171,8 @@ function apellido_metabox($post){
 }
 
 function subespecialidades_metabox($post){
-    $subespecialidad = get_post_meta($post->ID, '_subespecialidad_meta_key', true);?>
-    <input tipe="text" name="subespecialidad_meta_key" id="subespecialidad_meta_key" class="my-postbox" placeholder="Sub Especialidad" value="<?php echo $subespecialidad; ?>">
-    <?php
+    $subespecialidad = get_post_meta($post->ID, '_subespecialidad_meta_key', true);
+    wp_editor( stripslashes($subespecialidad), 'subespecialidad_meta_key', $settings = array('textarea_name'=>'subespecialidad_meta_key', 'teeny' => true, 'textarea_rows' => 5) );
  }
 
 
@@ -259,8 +258,8 @@ function profesionales_init() {
     if(getenv('WP_ENV')!=="development") {
         $path = "/frontend/build/static";
     }
-    wp_register_script("my_react_app_js", plugins_url($path."/js/main.js?234", __FILE__), array(), "1.0", false);
-    wp_register_style("my_react_app_css", plugins_url($path."/css/main.css", __FILE__), array(), "1.0", "all");
+    wp_register_script("my_react_app_js", plugins_url($path."/js/main.js?123", __FILE__), array(), "1.0", false);
+    wp_register_style("my_react_app_css", plugins_url($path."/css/main.css?123", __FILE__), array(), "1.0", "all");
 }
 
 add_action( 'init', 'profesionales_init' );
