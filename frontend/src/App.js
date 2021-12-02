@@ -25,7 +25,9 @@ function App() {
         })
         .then(function (myJson) {
           if(myJson.length == 100){
-            prof = myJson;
+            myJson.forEach(element => {
+              prof.push(element);
+            });
             getProfecionales(++counter);
           }else{
             myJson.forEach(element => {
@@ -68,9 +70,9 @@ function App() {
           titulo: especialidad.title.rendered,
         });
         const profesionalesAMostrar = []
-  
-        profesionales.filter((profesional,index) => {
-          if (profesional.post_meta_fields._especialidad_field[0] === especialidad.id.toString()) {
+        profesionales.filter((profesional,ind) => {
+         
+          if (especialidad.id.toString() === profesional.post_meta_fields._especialidad_field[0]) {
             let subespecialidad = '';
             if(profesional.post_meta_fields._subespecialidad_meta_key){
               subespecialidad = profesional.post_meta_fields._subespecialidad_meta_key[0]
@@ -88,7 +90,7 @@ function App() {
               //profesionalesAMostrar[index].genero = profesional.post_meta_fields._genero_meta_key;
             }*/
             if(profesional._embedded){
-              profesionalesAMostrar[index].imagen = profesional._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+              profesionalesAMostrar[ind].imagen = profesional._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
             }
           }
           return profesionalesAMostrar;

@@ -258,8 +258,8 @@ function profesionales_init() {
     if(getenv('WP_ENV')!=="development") {
         $path = "/frontend/build/static";
     }
-    wp_register_script("my_react_app_js", plugins_url($path."/js/main.js?123", __FILE__), array(), "1.0", false);
-    wp_register_style("my_react_app_css", plugins_url($path."/css/main.css?123", __FILE__), array(), "1.0", "all");
+    wp_register_script("my_react_app_js", plugins_url($path."/js/main.js?54", __FILE__), array(), "1.0", false);
+    wp_register_style("my_react_app_css", plugins_url($path."/css/main.css?54", __FILE__), array(), "1.0", "all");
 }
 
 add_action( 'init', 'profesionales_init' );

@@ -19,7 +19,7 @@ export const Profesional = ({ profesional, profesionalSeleccionado }) => {
             }
         }
 
-        if(profesional.apellido == 'CANTABERTA'){
+        if(profesional.apellido == 'SPAIS'){
             console.log(profesional)
         }
     }, [])
