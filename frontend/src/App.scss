@@ -4,8 +4,8 @@
     font-size: 32px;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: top;
+    justify-content:center;
 }
 
 .flip-box-front.selected, .flip-box-back.selected{
@@ -135,4 +135,30 @@ a {
 
 .panel-title{
     display: flex;
+}
+
+#selectFilter{
+    margin-top:5px;
+}
+
+@media (max-width: 768px) {
+    .autocomplete div{
+        width: 100%;
+        margin-top:10px;
+    }
+
+    .autocomplete .btn{
+        width: 100%;
+        margin-top:10px;
+        margin-bottom: 10px !important;
+    }
+}
+
+.autocomplete .btn{
+    float: right;
+}
+
+.ancla{
+    position:absolute;
+    top:-65px;
 }

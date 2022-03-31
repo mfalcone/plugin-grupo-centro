@@ -19,14 +19,11 @@ export const Profesional = ({ profesional, profesionalSeleccionado }) => {
             }
         }
 
-        if(profesional.apellido == 'SPAIS'){
-            console.log(profesional)
-        }
+       
     }, [])
 
    
     const changeFlip = (e) => {
-        console.log(e.target.parentElement.parentElement.parentElement)
         setFlipped(!flipped);
         if(!flipped){
             e.target.parentElement.parentElement.parentElement.querySelector('.react-card-back').classList.add('flipped');

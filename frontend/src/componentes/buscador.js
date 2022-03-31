@@ -50,19 +50,19 @@ export const Buscador = ({ especialidades, buscarEspecialidad,limpiarFiltrado, b
 
     return (
         <div className="row buscador" id="buscador">
-            <div className="col-10">
+            <div className="col-12 col-md-10">
                 <div className="row">
-                    <div className="col-auto">
+                    <div className="col-4 col-md-auto">
                         <label style={{marginTop:"12px"}}>Buscar por:</label>
                     </div>
-                    <div className="col-auto">
+                    <div className="col-8 col-md-auto">
                         <select id="selectFilter" className="form-select" onChange={seleccionarFiltro} defaultValue="">
                             <option value="">Seleccione...</option>
                             <option value="E">Especialidad</option>
                             <option value="P">Profesional</option>
                         </select>
                     </div>
-                    {filtro === 'E' && <div className="col-auto position-relative">
+                    {filtro === 'E' && <div className="col-12 col-md-auto position-relative autocomplete">
                         <Autocomplete
                             className="form-control"
                             menuStyle={estilos}
@@ -81,7 +81,7 @@ export const Buscador = ({ especialidades, buscarEspecialidad,limpiarFiltrado, b
                         />
                         {especialidadvalue !== '' && <button type="button" className="btn btn-light ms-2 mb-1" onClick={(e) => {buscarEspecialidad(especialidadvalue)}}>Buscar Especialidad</button>}
                     </div>}
-                    {filtro === 'P' && <div className="col-auto position-relative">
+                    {filtro === 'P' && <div className="col-12 col-md-auto position-relative  autocomplete">
                         <Autocomplete
                             menuStyle={estilos}
                             inputProps={{ placeholder: "buscar profesional", className: "form-control" }}
@@ -101,7 +101,7 @@ export const Buscador = ({ especialidades, buscarEspecialidad,limpiarFiltrado, b
                     </div>}
                 </div>
             </div>
-            <div className="col-2 text-end">
+            <div className="col-md-2 text-end">
                 {(profesionalvalue !== '' || especialidadvalue !== '') && <button type="button" className="btn btn-light ms-2 mb-1" onClick ={borrarFiltro}>Borrar Filtro</button>}
             </div>
         </div>

@@ -34,14 +34,16 @@ export const Especialidades = ({ especialidades }) => {
         }
     }, [especialidadFiltrada])
 
-   const abrirCerrar = (index) => {
+   const abrirCerrar = (index, especialidadId) => {
         if (activo === index) {
             setActivo(null);
         } else {
             setActivo(index);
+            setTimeout(function(){
+                window.location.href = "#prof"+especialidadId
+            },400);
         }
     }
-   
 
     return (
         <Fragment>
@@ -52,7 +54,8 @@ export const Especialidades = ({ especialidades }) => {
                 <Accordion activeKey={activo} flush>
                     {especialidadesAMostrar.map((especialidad, index) => {
                         return (<Accordion.Item eventKey={index} key={especialidad.id}><div className="row">
-                            <Accordion.Header onClick={() => {abrirCerrar(index)}}>
+                            <Accordion.Header onClick={() => {abrirCerrar(index, especialidad.id)}}>
+                            <div className="ancla" id={'prof'+especialidad.id} ></div>
                             <h4 className="panel-title toggle">
                            {(activo === index)?(<Dash />):(<Plus />)} 
                             <span className="fusion-toggle-heading">{especialidad.titulo}</span>
